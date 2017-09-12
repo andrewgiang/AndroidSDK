@@ -21,6 +21,10 @@ RUN dpkg --add-architecture i386 && \
     apt-get install -y git wget zip && \
     apt-get install -y qt5-default
 
+# download slave jar for jenkins
+RUN cd /root && \
+    wget -q http://moya.detroitlabs.com/jnlpJars/slave.jar
+
 # download and install Gradle
 ENV GRADLE_VERSION 4.1
 RUN cd /opt && \
